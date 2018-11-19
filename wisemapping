@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# generado inicialmente con comando
+# export APPNAME=wisemapping && py2txt ~/dropbox/learning/docker.py | bash 
+# substitute this with your main script
+echo "Hello world. Docker app wisemapping created and running"

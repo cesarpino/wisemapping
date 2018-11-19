@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+# generado inicialmente con comando
+# export APPNAME=wisemapping && py2txt ~/dropbox/learning/docker.py | bash 
+    
+echo "building docker app image"
+docker build -t wisemapping . || exit 1
+
+    
+echo "Stop previous instance"
+docker stop wisemapping
+echo "Delete previous app image"
+docker rm wisemapping
+# create a deamon docker. using the same name of the app
+echo "Run the server"
+docker run -d --env-file .env -p 80:8080 --name wisemapping wisemapping
+    
+echo "To connect to the running daemon interactively using bash, type" 
+echo "   docker exec -ti wisemapping /bin/bash"
